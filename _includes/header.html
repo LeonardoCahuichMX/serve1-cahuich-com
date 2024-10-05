@@ -1,0 +1,87 @@
+<div class="loader">
+    <div class="centro">
+      <div class="caja-auto">
+        <h2>Leonarodo <b>Cahuich</b></h2>
+        <h3>Cargando</h3>
+      </div>
+    </div>
+  </div>
+    <div class="menu">
+        <div class="menu-caja">
+          <div class="centro-no">
+            <div class="caja-3 caja-texto">
+              <h4>Hola, soy Sou fei</h4>
+              <p>Este es un texto de ejemplo que estara en el menu para que se vea
+                menos vacio.
+              </p>
+            </div>
+            <div class="contra-caja-5 caja-menu">
+              <h4>Menu</h4>
+              <ul>
+                <li>
+                  <a href="{{ "/pages/" | relative_url }}">Todos los articulos</a>
+                </li>
+                <li>
+                  <a href="{{ "/galeria/" | relative_url }}">Galería</a>
+                </li>
+                <li>
+                  <a href="{{ "/blog/" | relative_url }}">Blog</a>
+                </li>
+                <li>
+                  <a href="{{ "/Acerca-de/" | relative_url }}">Acerca de</a>
+                </li>
+              </ul>
+            </div>
+            <div class="caja-5 redes">
+              <h4>Redes</h4>
+              <ul>
+                <li>
+                  <a href="https://www.instagram.com/sophia_mukho/">Instagram</a>
+                </li>
+                <!--<li>
+                  <a href="mailto:info@cahuich.com">Email</a>
+                </li>-->
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <div class="buscar-caja">
+      {% include search-lunr.html %}
+    </div>
+    <header>
+        <div class="nav">
+          <div class="titulo" id="inicio-page-nav-titulo">
+            <a href="{{ "/" | relative_url }}"> <span class="titulo-otro">Leonardo / </span><b>Cahuich.com</b></a>
+          </div>
+          <div class="titulo" id="blog-page-nav-titulo">
+            <a href="{{ "/" | relative_url }}"> <span class="titulo-otro">Leonardo / Cahuich.com </span></a> / <a href="{{ "/blog/" | relative_url }}"><b>Blog</b></a>
+          </div>
+          <nav>
+            <ul class="links-page">
+              <span class="menu-pagina">
+              </span>
+            </ul>
+            <ul class="ul-menu">
+              <li class="buscar-i">
+                <!--<a href="{{ "/buscar/" | relative_url }}">-->
+                <a>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="input-icon" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
+                  </svg>
+                </a>
+                <!--</a>-->
+              </li>
+              <li class="h-btn" id="menu">
+                <a>
+                  &#9776
+                </a>
+              </li>
+              <li class="h-btn" id="menu-x">
+                <a>&#926</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>

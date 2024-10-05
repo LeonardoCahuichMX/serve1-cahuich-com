@@ -1,0 +1,486 @@
+---
+layout: default
+---
+
+<script>
+  /*<alert("hola");
+  $('body').addClass('home');*/
+  var elemento = document.querySelectorAll("body");
+  for (var i = 0; i < elemento.length; i++) {
+    elemento[i].classList.add("inicio");
+    elemento[i].classList.add("black-page");
+    elemento[i].classList.add("ws-page");
+  }
+</script>
+
+<!--<section class="portada" linknav1="Inicio" id="portada">
+  <div class="centro" observadoranimaciones="animate-back-to-front-to-initial" id="portada-centro">
+    <div class="caja">
+      <div class="titulo-pag">
+        <div class="terminal_code_contenedor" >
+          <div class="texto">
+            <span class="tipo-1" observadoranimaciones="span_animacion" id="span_animacion-1">cahuich@leonardo:~$</span>
+          </div>
+        </div>
+        <div class="titulo titulo-2">
+          bundle exec jekyll serve
+        </div>
+        <div class="titulo titulo-3">
+          <p id="botones">
+            <a href="#masdemi"><span class="b-2">- Conoce más sobre mí</span></a>
+            <a href="#portafolio"><span class="b-2">- Conoce mi trabajo</span></a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="datos-background">
+      <h6>Imagen de <a href="https://pixabay.com/es/users/gondarcacad-4871209/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=3161858">Muhammad iqbal</a> en <a href="https://pixabay.com/es//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=3161858">Pixabay</a></h6>
+    </div>
+  </div>
+</section>-->
+<section class="sec sec-basica sec-basica-10 portada-new" linknav1="Portada" id="portada">
+  <div class="responsivo centro">
+    <div class="caja" data-aos="fade-up">
+      <div class="terminal_code_contenedor consola" >
+        <div class="texto">
+          <span class="tipo-1" observadoranimaciones="span_animacion" id="terminal_code_animacion_1">cahuich@leonardo:~$ bienvenida</span>
+        </div>
+      </div>
+      <h1 class="titulo">
+        Hola visitante, bienvenido a mi
+        sitio web
+      </h1>
+      <p id="botones">
+        <a href="#masdemi"><span class="b-2">- Conoce más sobre mí</span></a>
+        <a href="#portafolio"><span class="b-2">- Conoce mi trabajo</span></a>
+      </p>
+      <!--<p>Puedo ayudarte a diseñar y programar tu sitio web.</p>
+      <p>Contáctame a mi correo electrónico</p>
+      <p id="botones"><a href="mailto:info@cahuich.com"  class="btn-1 b-blanco"><span class="b-2">info@cahuich.com</span></a></p>-->
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-basica sec-basica-0 home-blog-articulo-reciente">
+  <div class="responsivo centro">
+    <div class="r-caja caja-auto" data-aos="fade-up">
+      <div class="sec-basica-5">
+        {%- for post in site.categories.Blog -%}
+        {% if post.title == "Instalar Jekyll en MacOS" %}
+        <div class="r-caja caja-auto">
+          <div class="terminal_code_contenedor" >
+            <div class="texto">
+              <span class="tipo-1" observadoranimaciones="span_animacion" id="terminal_code_animacion_2">cahuich@leonardo:~$ post.<b>blog</b>.article.featured</span>
+            </div>
+          </div>
+          <h3 class="titulo">
+            <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+          </h3>
+          <p>
+            {{ post.excerpt }}
+          </p>
+          {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+          <h5>{{ post.date | date: date_format }}</h5>
+        </div>
+        {% endif %}
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section linknav1="Mas de mi"  observadoranimaciones="animate-back-to-front-to-initial" id="masdemi" class="sec sec-basica sec-basica-15 sec-color-1 seccion-1">
+  <div class="responsivo centro">
+    <div class="r-caja caja-auto" data-aos="fade-up">
+      <div class="terminal_code_contenedor">
+        <div class="texto">
+          <span class="tipo-1" observadoranimaciones="span_animacion" id="span_animacion-2">cahuich@leonardo:~$ presentación</span>
+        </div>
+      </div>
+      <h1 class="titulo gradient-text-amarillo-purpura">
+        Me gusta diseñar sitios web, me gusta experimentar.
+      </h1>
+      <div class="cont-1">
+        <p>
+          Nací en una pequeña ciudad de México, desde que llego a mí
+          un CD con el instalador de Ubuntu me intereso el mundo informático.
+        </p>
+        <p>
+          Actualmente, estoy centrado en el diseño y desarrollo web, con algún trabajo
+          de diseño de otras índoles...
+        </p>
+        <p id="botones"><a href="mailto:info@cahuich.com"  class="btn-1 b-blanco"><span class="b-2">info@cahuich.com</span></a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-basica sec-basica-10 productos" linknav1="Serviciós" id="servicios">
+  <div class="productos-titulo-1 p-36">
+    <span class="gradient-text-azul-purpura">Serviciós</span>
+  </div>
+  <div class="centro-no">
+    <div class="caja-4 productos-titulo">
+      <div class="productos-titulo-cont p-24">
+        Sitios web
+      </div>
+    </div>
+    <div class="contra-caja-4">
+      <div class="articulo" observadoranimaciones="animate-back-to-front-to-initial" id="articulo-ws-1">
+        <img width="100%" height="auto" src="../assets/img/home/website-2.webp">
+        <div class="p-10-5" style="font-weight: 100">El caso de arriba responde a <a href="http://ngosoufei.com">ngosoufei.com</a>. </div>
+        <h3><span class="sub-titulo">(sitio web)</span> Completo</h3>
+        <p>
+          Después de una profunda consideración, me daba cuenta de que el arte era el camino y fruto de mí.
+          Por lo tanto, viajé de cantón, un desierto de arte, a Barcelona, un centro de arte, para estudiar,
+          explorar y vivir. En cientos de creación, me reconozco, reflexiono de mi identidad,
+          reconozco la relación con el mundo, y desarrollo mi propio idioma artística. Escultura y pintura son mi poesía.
+        </p>
+        <p id="botones">
+          <a href="mailto:info@cahuich.com"  class="btn-1 b-blanco">
+            <span class="b-2">
+              Mas información
+            </span>
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="centro-no">
+    <div class="caja-4 productos-titulo">
+      <div class="productos-titulo-cont p-24">
+        Blogs <span class="sub-titulo">with jekyll</span>
+      </div>
+    </div>
+    <div class="contra-caja-4">
+      <div class="articulo" observadoranimaciones="animate-back-to-front-to-initial" id="articulo-blog-1">
+        <img width="100%" height="auto" src="../assets/img/home/website.webp">
+        <h3><span class="sub-titulo">(blog)</span> in notion</h3>
+        <p>
+          Después de una profunda consideración, me daba cuenta de que el arte era el camino y fruto de mí.
+          Por lo tanto, viajé de cantón, un desierto de arte, a Barcelona, un centro de arte, para estudiar,
+          explorar y vivir. En cientos de creación, me reconozco, reflexiono de mi identidad,
+          reconozco la relación con el mundo, y desarrollo mi propio idioma artística. Escultura y pintura son mi poesía.
+        </p>
+        <p id="botones">
+          <a href="mailto:info@cahuich.com"  class="btn-1 b-blanco">
+            <span class="b-2">
+              Mas información
+            </span>
+          </a>
+        </p>
+      </div>
+      <div class="articulo" observadoranimaciones="animate-back-to-front-to-initial" id="articulo-blog-2">
+        <img width="100%" height="auto" src="../assets/img/home/website.webp">
+        <h3><span class="sub-titulo">(blog)</span> alternative</h3>
+        <p>
+          Después de una profunda consideración, me daba cuenta de que el arte era el camino y fruto de mí.
+          Por lo tanto, viajé de cantón, un desierto de arte, a Barcelona, un centro de arte, para estudiar,
+          explorar y vivir. En cientos de creación, me reconozco, reflexiono de mi identidad,
+          reconozco la relación con el mundo, y desarrollo mi propio idioma artística. Escultura y pintura son mi poesía.
+        </p>
+        <p id="botones">
+          <a href="mailto:info@cahuich.com"  class="btn-1 b-blanco">
+            <span class="b-2">
+              Mas información
+            </span>
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="centro-no">
+    <div class="caja-4 productos-titulo">
+      <div class="productos-titulo-cont p-24">
+        Aplicaciones
+      </div>
+    </div>
+    <div class="contra-caja-4">
+      <div class="articulo" observadoranimaciones="animate-back-to-front-to-initial" id="articulo-app-1">
+        <img width="100%" height="auto" src="../assets/img/home/website.webp">
+        <h3><span class="sub-titulo">(aplicaciones)</span> PWA</h3>
+        <p>
+          Después de una profunda consideración, me daba cuenta de que el arte era el camino y fruto de mí.
+          Por lo tanto, viajé de cantón, un desierto de arte, a Barcelona, un centro de arte, para estudiar,
+          explorar y vivir. En cientos de creación, me reconozco, reflexiono de mi identidad,
+          reconozco la relación con el mundo, y desarrollo mi propio idioma artística. Escultura y pintura son mi poesía.
+        </p>
+        <p id="botones">
+          <a href="mailto:info@cahuich.com"  class="btn-1 b-blanco">
+            <span class="b-2">
+              Mas información
+            </span>
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<section class="sec sec-basica sec-basica-0 home-blog-articulo-reciente"  linknav1="Portafolio" id="portafolio">
+  <div class="responsivo centro">
+    <div class="r-caja caja-2" data-aos="fade-up">
+      <div class="sec-basica-5">
+        <div class="r-caja caja-auto">
+          <div class="terminal_code_contenedor" >
+            <div class="texto">
+              <span class="tipo-1" observadoranimaciones="span_animacion" id="terminal_code_animacion_4">cahuich@leonardo:~$</span>
+            </div>
+          </div>
+          <div class="p-36">
+            <span class="gradient-text-azul-purpura">Portafolio</span>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="lista-portafolio" observadoranimaciones="animate-back-to-front-to-initial" id="lista-post-colecciones">
+  <div class="sec sec-basica lista-portafolio-cont">
+    <h2>
+      Sitios web
+    </h2>
+    <div class="lista-portafolio-grib">
+      {% assign posts_con_tag_2 = site.posts | where_exp: "post", "post.tags contains 'SitiosWeb'" %}
+
+      {% if posts_con_tag_2.size > 0 %}
+      {% for post in posts_con_tag_2 limit : 2 %}
+
+      <div class="pc-cajas" onclick="window.location.href = '{{ site.baseurl }}{{ post.url | relative_url }}';">
+            <div class="caja-img" style="background-image: url({{ post.background }});"></div>
+            <!--<img width="100%" height="auto" src={{ post.background }}>-->
+            <!--<h4 class="sub-titulo">
+              Articulo
+            </h4>-->
+            <h4 class="titulo">
+              <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+            </h4>
+            <p>
+              {{ post.excerpt | truncate: 100}}
+            </p>
+      </div>
+
+      {% endfor %}
+      {% else %}
+      <p>No hay posts con el tag 'Publicaciones'.</p>
+      {% endif %}
+
+      <!--<div class="pc-cajas">
+        <div class="centro">
+          <div class="caja-auto">
+            <h4 class="sub-titulo">
+              Articulo
+            </h4>
+            <h3 class="titulo">
+              Descubre todos mis articulos
+            </h3>
+            <p>
+              <a class="btn-1 b-negro" href="{{ "/pages/" | relative_url }}"><span class="b-2">Ir a la colección</span></a>
+            </p>
+          </div>
+        </div>
+      </div>-->
+
+    </div>
+
+    <h2>
+      Publicaciones
+    </h2>
+    <div class="lista-portafolio-grib">
+      {% assign posts_con_tag_2 = site.posts | where_exp: "post", "post.tags contains 'Publicaciones'" %}
+
+      {% if posts_con_tag_2.size > 0 %}
+      {% for post in posts_con_tag_2 limit : 2 %}
+
+      <div class="pc-cajas" onclick="window.location.href = '{{ site.baseurl }}{{ post.url | relative_url }}';">
+        <div class="caja-img" style="background-image: url({{ post.background }});"></div>
+        <!--<img width="100%" height="auto" src={{ post.background }}>-->
+        <!--<h4 class="sub-titulo">
+          Articulo
+        </h4>-->
+        <h4 class="titulo">
+          <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+        </h4>
+        <p>
+          {{ post.excerpt | truncate: 100}}
+        </p>
+      </div>
+
+      {% endfor %}
+      {% else %}
+      <p>No hay posts con el tag 'Publicaciones'.</p>
+      {% endif %}
+
+      <!--<div class="pc-cajas">
+        <div class="centro">
+          <div class="caja-auto">
+            <h4 class="sub-titulo">
+              Articulo
+            </h4>
+            <h3 class="titulo">
+              Descubre todos mis articulos
+            </h3>
+            <p>
+              <a class="btn-1 b-negro" href="{{ "/pages/" | relative_url }}"><span class="b-2">Ir a la colección</span></a>
+            </p>
+          </div>
+        </div>
+      </div>-->
+
+    </div>
+    <div class="sec titulos-seccion-sub">
+      <div class="titulos-seccion-sub-centro responsivo centro">
+        <div class="r-caja caja" data-aos="fade-up">
+          <div class="sec-basica-5">
+            <div class="r-caja caja-auto">
+              <div class="terminal_code_contenedor" >
+                <div class="texto">
+                  <span class="tipo-1" observadoranimaciones="span_animacion" id="terminal_code_animacion_5">cahuich@leonardo:~$</span>
+                </div>
+              </div>
+              <div class="p-28">
+                Por ahora esto es mi <span class="gradient-text-azul-purpura">portafolio</span>, pero cuando haya mas te mostrare mas.
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="sec sec-basica sec-basica-10 seccion-blog" linknav1="Blog" id="blog">
+
+  <div class="responsivo centro">
+    <div class="caja">
+      <h2 class="titulo">Mi blog</h2>
+      <div class="descripccion">
+        <b>En mi blog escribo sobre distintos temas varios, desde programación, hasta otras cosa distintas.</b>
+      </div>
+    </div>
+  </div>
+
+  <div class="responsivo contenerdor-blog">
+    <h3>Articulos recientes</h3>
+    <div class="contenerdor-blog-cont">
+      {%- for post in site.categories.Blog limit : 3 -%}
+      <div class="caja-blog" onclick="window.location.href = '{{ site.baseurl }}{{ post.url | relative_url }}';">
+        <h4 style="color: {{ post.color }};"><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h4>
+        {{ post.excerpt | truncate: 100}}
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        <h5>{{ post.date | date: date_format }}</h5>
+      </div>
+      {%- endfor -%}
+    </div>
+  </div>
+
+  <div class="sec titulos-seccion-sub">
+    <div class="titulos-seccion-sub-centro responsivo centro">
+      <div class="r-caja caja" data-aos="fade-up">
+        <div class="sec-basica-5">
+          <div class="r-caja caja-auto">
+            <div class="terminal_code_contenedor">
+              <div class="texto">
+                <span class="tipo-1" observadoranimaciones="span_animacion" id="terminal_code_animacion_6">cahuich@leonardo:~$</span>
+              </div>
+            </div>
+            <div class="p-28">
+              Encuentra mas articulos en mi <span class="gradient-text-azul-purpura"><a href="{{ "/blog/" | relative_url }}">Blog</a></span>.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</section>
+
+<section class="sec sec-basica ts" style="display: none">
+  <div class="responsivo centro">
+    <div class="r-caja caja-2" data-aos="fade-up">
+      <h2 class="sub-titulo">
+        Tengo un blog
+      </h2>
+      <h1 class="titulo">
+        Ahi hablo desde
+        jekyll, html5,
+        y temas varios.
+      </h1>
+      <!--<p>Puedo ayudarte a diseñar y programar tu sitio web.</p>
+      <p>Contáctame a mi correo electrónico</p>
+      <p id="botones"><a href="mailto:info@cahuich.com"  class="btn-1 b-blanco"><span class="b-2">info@cahuich.com</span></a></p>-->
+    </div>
+  </div>
+  <div class="responsivo centro">
+    <div class="r-caja caja-auto" data-aos="fade-up">
+      <section class="sec-basica-5">
+          {%- for post in site.categories.Blog -%}
+          {% if post.title == "Instalar Jekyll en MacOS" %}
+          <div class="r-caja caja-auto">
+            <h3 class="titulo" style="color: {{ post.color }};">
+              {{ post.title | escape }}
+            </h3>
+            <p>
+              {{ post.excerpt }}
+            </p>
+            <p>
+              <a href="{{ post.url | relative_url }}">Ir al sitio</a>
+            </p>
+            {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+            <h5>{{ post.date | date: date_format }}</h5>
+          </div>
+          {% endif %}
+          {%- endfor -%}
+      </section>
+    </div>
+  </div>
+  <div class="responsivo centro">
+    <section class="ts-post" id="lista-post" observadoranimaciones="animate-back-to-front-to-initial">
+      <div class="sec sec-basica lista-post-cont">
+        <div class="centro-grib">
+          {%- for post in site.categories.Blog limit : 3 -%}
+
+          <div class="pc-cajas ngosoufei-com" onclick="window.location.href = '{{ site.baseurl }}{{ post.url | relative_url }}';">
+            <div class="centro">
+              <div class="caja-auto">
+                <h5 class="sub-titulo">
+                  Artículo
+                </h5>
+                <h4 class="titulo">
+                  {{ post.title | escape }}
+                </h4>
+                <p>
+                  <a href="{{ post.url | relative_url }}">Ir al sitio</a>
+                </p>
+                {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+                <h5>{{ post.date | date: date_format }}</h5>
+              </div>
+            </div>
+          </div>
+          {%- endfor -%}
+
+          <div class="pc-cajas">
+            <div class="centro">
+              <div class="caja-auto">
+                <h5 class="sub-titulo">
+                  Articulo
+                </h5>
+                <h4 class="titulo">
+                  Descubre todos mis articulos
+                </h4>
+                <p>
+                  <a class="btn-1 b-blanco" href="{{ "/blog/" | relative_url }}"><span class="b-2">Ir a la blog</span></a>
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </div>
+  <h6>
+    Imagen (1)
+  </h6>
+</section>

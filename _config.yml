@@ -1,0 +1,169 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+#
+# If you need help with YAML syntax, here are some quick references for you:
+# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
+# https://learnxinyminutes.com/docs/yaml/
+#
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+
+title: Leonardo Cahuich #Your awesome title
+email: info@cahuich.com #your-email@example.com
+description: >- # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://preview.cahuich.com/" # the base hostname & protocol for your site, e.g. http://example.com
+#twitter_username: jekyllrb
+github_username:  LeonardoCahuichMX
+
+# Build settingss
+theme: cahuichcom
+
+#seo
+tagline: "Un sitio web dedicado a publicar mi arte."
+logo: /icon.png
+author:
+  name: Ngo Soufei
+  links: "http://ngosoufei.com/"
+social:
+    - "https://www.instagram.com/sophia_mukho/"
+
+#gihub
+#lsi: false
+#safe: true
+#source: https://github.com/LeonardoCahuichMX/preview-ngosoufei-com
+#incremental: false
+#highlighter: rouge
+#gist:
+#  noscript: false
+#kramdown:
+#  math_engine: mathjax
+#  syntax_highlighter: rouge
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+# exclude:
+#   - .sass-cache/
+#   - .jekyll-cache/
+#   - gemfiles/
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules/
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
+
+## front matter defecto
+defaults:
+ -
+   scope:
+     path: "posts" # empty string means all files
+   values:
+     layout: "post"
+     author: "Leonardo Cahuich"
+
+#plugins:
+ # - jekyll-paginate # lo agregué for enhancement
+#  - jekyll-paginate-v2
+
+plugins:
+ - jekyll-paginate-v2
+ - jekyll-default-layout
+   #Si no se especifica ningún diseño para un post o página Markdown,
+   #el plugin establece automáticamente el diseño de "casa", "post",
+   #"página" o "por defecto" si existe.
+   #https://github.com/benbalter/jekyll-default-layout
+ - jekyll-seo-tag
+   #https://github.com/jekyll/jekyll-seo-tag
+ - jekyll-webp
+# - jekyll-remote-theme
+  
+
+# Pagination - https://jekyllrb.com/docs/pagination/
+#paginate: 8
+#paginate_path: "/pages/pagina-:num/"
+
+#paginate: 8
+#paginate_path: "/colecciones/col-:num/"
+
+# Pagination Settings
+pagination:
+  enabled: true
+
+permalink: /Articulo/:categories/:title
+
+### Colecciones
+
+collections:
+  - staff_members
+
+collections:
+  staff_members:
+    #permalink: /:collection/:name
+    permalink: /equipo/:name
+    people: true
+    output: true
+
+############################################################
+# Site configuration for the WebP Generator Plugin
+# The values here represent the defaults if nothing is set
+#https://github.com/sverrirs/jekyll-webp
+
+webp:
+  enabled: true
+  
+  # The quality of the webp conversion 0 to 100 (where 100 is least lossy)
+  quality: 100
+
+  # List of directories containing images to optimize, nested directories will only be checked if `nested` is true
+  # By default the generator will search for a folder called `/img` under the site root and process all jpg, png and tiff image files found there.
+  img_dir: ["/assets/img", "/assets/img/home", "/assets/img/obras/vas", "/assets/img/obras/miedo", "/assets/img/obras/sombras", "/assets/img/blog", "/assets/img/about", "/assets/img/trabajos-independientes"]
+
+  # Whether to search in nested directories or not
+  #nested: false
+  nested: false
+
+  # add ".gif" to the format list to generate webp for animated gifs as well
+  formats: [".jpeg", ".jpg", ".png", ".tiff"]
+
+  # File extensions for animated gif files 
+  gifs: [".gif"]
+
+  # Set to true to always regenerate existing webp files
+  regenerate: false
+
+  # Local path to the WebP utilities to use (relative or absolute)
+  # Omit or leave as nil to use the utilities shipped with the gem, override only to use your local install
+  # Eg : "/usr/local/bin/cwebp"
+  webp_path: nil
+
+  # List of files or directories to exclude
+  # e.g. custom or hand generated webp conversion files
+  exclude: []
+
+  # append '.webp' to filename after original extension rather than replacing it.
+  # Default transforms `image.png` to `image.webp`, while changing to true transforms `image.png` to `image.png.webp`
+  append_ext: false
+############################################################
+
+###########################################################
