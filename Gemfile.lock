@@ -281,7 +281,6 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  cahuichcom!
   github-pages
   jekyll (~> 3.10)
   jekyll-default-layout
