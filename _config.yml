@@ -30,7 +30,7 @@ url: "https://preview.cahuich.com/" # the base hostname & protocol for your site
 github_username:  LeonardoCahuichMX
 
 # Build settingss
-#theme: cahuichcom
+theme: cahuichcom
 
 #seo
 tagline: "Un sitio web dedicado a publicar mi arte."
