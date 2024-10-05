@@ -364,7 +364,7 @@ layout: default
   <div class="responsivo contenerdor-blog">
     <h3>Articulos recientes</h3>
     <div class="contenerdor-blog-cont">
-      {%- for post in site.categories.Blog limit : 3 -%}
+      {%- for post in site.categories.Blog limit : 4 -%}
       <div class="caja-blog" onclick="window.location.href = '{{ site.baseurl }}{{ post.url | relative_url }}';">
         <h4 style="color: {{ post.color }};"><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h4>
         {{ post.excerpt | truncate: 100}}

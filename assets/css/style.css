@@ -1086,6 +1086,8 @@ Seccion - blog nueva
   grid-template-columns: 1fr 1fr 1fr 1fr;
   column-gap: 20px;
   row-gap: 20px;
+
+  cursor: pointer;
 }
 
 /* ##################################################

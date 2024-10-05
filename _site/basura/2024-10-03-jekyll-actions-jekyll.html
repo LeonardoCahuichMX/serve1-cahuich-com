@@ -1,6 +1,6 @@
 <!doctype html>
 <html class="no-js" lang="es_mx"><head>
-    <title>Implementar Lunr.js en Jekyll</title>
+    <title>Usar Jekyll en Github con Actions Jekyll</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,22 +14,22 @@
       <link rel="stylesheet" href="/assets/css/animaciones.css" />
 
     <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Implementar Lunr.js en Jekyll | Leonardo Cahuich</title>
+<title>Usar Jekyll en Github con Actions Jekyll | Leonardo Cahuich</title>
 <meta name="generator" content="Jekyll v4.3.4" />
-<meta property="og:title" content="Implementar Lunr.js en Jekyll" />
+<meta property="og:title" content="Usar Jekyll en Github con Actions Jekyll" />
 <meta name="author" content="Leonardo Cahuich" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Lunr.js es una biblioteca en “js” para una búsqueda front-end, por lo tanto, es conveniente su uso en Jekyll dada su naturaleza similar." />
-<meta property="og:description" content="Lunr.js es una biblioteca en “js” para una búsqueda front-end, por lo tanto, es conveniente su uso en Jekyll dada su naturaleza similar." />
-<link rel="canonical" href="http://localhost:4000/Articulo/blog/Implementar-Lunr-js-en-Jekyll" />
-<meta property="og:url" content="http://localhost:4000/Articulo/blog/Implementar-Lunr-js-en-Jekyll" />
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<link rel="canonical" href="http://localhost:4000/basura/2024-10-03-jekyll-actions-jekyll" />
+<meta property="og:url" content="http://localhost:4000/basura/2024-10-03-jekyll-actions-jekyll" />
 <meta property="og:site_name" content="Leonardo Cahuich" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-10-03T21:30:48-06:00" />
+<meta property="article:published_time" content="2024-10-05T16:10:00-06:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Implementar Lunr.js en Jekyll" />
+<meta property="twitter:title" content="Usar Jekyll en Github con Actions Jekyll" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Leonardo Cahuich"},"dateModified":"2024-10-03T21:30:48-06:00","datePublished":"2024-10-03T21:30:48-06:00","description":"Lunr.js es una biblioteca en “js” para una búsqueda front-end, por lo tanto, es conveniente su uso en Jekyll dada su naturaleza similar.","headline":"Implementar Lunr.js en Jekyll","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/Articulo/blog/Implementar-Lunr-js-en-Jekyll"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/icon.png"},"name":"Leonardo Cahuich"},"url":"http://localhost:4000/Articulo/blog/Implementar-Lunr-js-en-Jekyll"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Leonardo Cahuich"},"dateModified":"2024-10-05T16:10:00-06:00","datePublished":"2024-10-05T16:10:00-06:00","description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","headline":"Usar Jekyll en Github con Actions Jekyll","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/basura/2024-10-03-jekyll-actions-jekyll"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/icon.png"},"name":"Leonardo Cahuich"},"url":"http://localhost:4000/basura/2024-10-03-jekyll-actions-jekyll"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -329,72 +329,164 @@ function lunr_search(term) {
       <article class="sec sec-basica-15 post-c r-caja">
         <div class="post-c-cont">
         <div class="post-header">
-          <h1 class="post-title p-name" itemprop="name headline">Implementar Lunr.js en Jekyll</h1>
-          <p class="post-meta"><time class="dt-published" datetime="2024-10-03T21:30:48-06:00" itemprop="datePublished">
-              Oct 3, 2024
+          <h1 class="post-title p-name" itemprop="name headline">Usar Jekyll en Github con Actions Jekyll</h1>
+          <p class="post-meta"><time class="dt-published" datetime="2024-10-05T16:10:00-06:00" itemprop="datePublished">
+              Oct 5, 2024
             </time>• 
                 <span itemprop="author" itemscope itemtype="http://schema.org/Person">
                   <span class="p-author h-card" itemprop="name">Leonardo Cahuich</span></span></p>
                 </div>
       
         <div class="post-content e-content" itemprop="articleBody">
-          <p>Lunr.js es una biblioteca en “js” para una búsqueda front-end, por lo tanto,
-es conveniente su uso en Jekyll dada su naturaleza similar.</p>
+          <p>Github permite la implementacion de jekyll de forma restringida mediante Github-Pages,
+pero tambien permite la implementacion por medio de Actions, usando el perfil Jekyll.
+Asi puede usar distintas versiones de Jekyll en lugar de la permitida por
+“github-pages”, e incluso usar plugins que no estan en la lista blanca de una forma mas facil.</p>
 
-<p>La implementación varia, pero en este artículo veremos como hacerlo muy fácil, y muy rápido.</p>
-
-<h3 id="1-instalación">1. Instalación</h3>
-
-<p>Hay 3 modos de instalación.</p>
-
-<h4 id="11-rpm">1.1 RPM</h4>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ npm install lunr
-</code></pre></div></div>
-<h4 id="12-local">1.2 Local</h4>
-
-<ol>
-  <li>Descarga el archivo “lunr.js” desde aquí <a href="https://raw.githubusercontent.com/jhvanderschee/jekyllcodex/gh-pages/js/lunr.js" title="Title">Lunr.js</a></li>
-  <li>Instalar en el directio “js” de raíz del proyecto</li>
-  <li>Descargar <a href="https://raw.githubusercontent.com/jhvanderschee/jekyllcodex/gh-pages/_includes/search-lunr.html" title="Title">search-lunr.html</a></li>
-  <li>Instalar en el directorio “_includes” de raíz del proyecto</li>
-  <li>Llamar el archivo “sear-lunr.html” desde cualquier parte con:
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>include search-lunr.html
-</code></pre></div>    </div>
-    <p>Recuerda encerrar lo anterior con “{“, “}”, “%” respectivo.</p>
-  </li>
-</ol>
-
-<h4 id="13-cdn">1.3 CDN</h4>
-
-<p>Es el mismo proceso que en local, pero en lugar de realizar el paso 1 y 2 de la lista anterior,
-en el archivo “search-lunr.html” sustituirás:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;script src="/assets/js/lunr.js"&gt;&lt;/script&gt;
-</code></pre></div></div>
-<p>Por:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;script src="https://unpkg.com/lunr/lunr.js"&gt;&lt;/script&gt;
-</code></pre></div></div>
-
-<h3 id="2-uso">2. Uso</h3>
-
-<p>Con eso basta para tener una implementación basica de lunr.js, para una personalización puede observar esta
-implementación basica y modificarla o ver este enlace:</p>
+<p>La opcion “normal” de uso de Jekyll en github, corria por “github-pages”, pero esta de forma restringida
+dando errores ya sea en situacion de:</p>
 <ul>
-  <li><a href="https://lunrjs.com/guides/getting_started.html">https://lunrjs.com/guides/getting_started.html</a></li>
+  <li>Temas</li>
+  <li>Plugins (que no estuviera en la lista blanca)</li>
+  <li>etc.</li>
 </ul>
 
-<h3 id="3-ejemplo">3. Ejemplo</h3>
-
-<p>Puede ver un ejemplo del uso de lunr.js aquí mismo, arriba hay una lupa dele clic para verla.</p>
-
-<h4 id="referencias">Referencias</h4>
+<p>Pero ahora Github CI/CD interno nombrado Acciones de GitHub. Las ventajas de esta implementacion son:</p>
 
 <ul>
-  <li><a href="https://lunrjs.com/guides/getting_started.html">https://lunrjs.com/guides/getting_started.html</a></li>
-  <li><a href="https://jekyllcodex.org/without-plugin/search-lunr/">https://jekyllcodex.org/without-plugin/search-lunr/</a></li>
+  <li>Versiones alternas de Jekyll.</li>
+  <li>Plugins fuera de la lista blanca.</li>
+  <li>Temas con caracteristicas de la versioens nueva de Jekyll.</li>
 </ul>
 
+<h2 id="flujo-de-trabajo--mi-caso">Flujo de trabajo / Mi Caso</h2>
 
-        </div><a class="u-url" href="/Articulo/blog/Implementar-Lunr-js-en-Jekyll" hidden></a>
+<p>En mi caso, mi sitio web tuvo problemas ya que se usaba la implementacion <strong>Github-Pages</strong>, pero esto me genero:</p>
+
+<ul>
+  <li>Errores de dependencias con el tema personalizado.</li>
+  <li>Errores de dependencias con la gema: <a href="https://github.com/sverrirs/jekyll-webp">jekyll-webp</a></li>
+</ul>
+
+<p>Tarde tiempo consultado para encontrar soluciones, encontrandome con dos situaciones comunes:</p>
+
+<ul>
+  <li>Error de dependencias con tema personalizado.</li>
+  <li>Error de bundler (code 5, code 6, code 16)</li>
+</ul>
+
+<h3 id="error-de-dependencias-con-tema-personalizado">Error de dependencias con tema personalizado</h3>
+
+<p>Este problema lo solucione cambiando el flujo de trabajo a Jekyll, solo jekyll no Github-Pages,
+pero el problema era que mi proyecto ya estaba configurado con:</p>
+
+<ul>
+  <li>Plugin: Github-pages</li>
+  <li>Version de jekyll usada por Github-Pages.</li>
+</ul>
+
+<p>Esto me llevo a los problemas con bundle.</p>
+
+<p>Recomendaciones importantes:</p>
+<ul>
+  <li><strong>Nunca instales homebrew con sudo</strong>
+Por ejemplo, tener un usuario normal, y otro solo de administrador eso traera problemas.
+Usa un usuario normal con administrador habilitado.</li>
+</ul>
+
+<h2 id="1-paso-1-instalar-homebrew">1. Paso 1: Instalar Homebrew</h2>
+
+<p>Inicia una terminal e introduce:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+</code></pre></div></div>
+<p>Recuerda: <strong>nada de sudo al inicio</strong></p>
+
+<h2 id="2-paso-2-instalar-chruby-y-ruby-con-ruby-install">2. Paso 2: Instalar chruby y ruby con ruby-install</h2>
+<p>Revisamos la version de ruby instalada, en este caso veremos una pero es la que macos usa por defecto, no la nescesitamos:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ruby -v
+</code></pre></div></div>
+<p>Instalamos chruby y ruby-install:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew install chruby ruby-install
+</code></pre></div></div>
+<p>Instalar ruby:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ruby-install ruby
+</code></pre></div></div>
+<p>Actualizamos para estar seguros:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ruby-install ruby --update
+</code></pre></div></div>
+<p>Revisamos la version de ruby instalada, recuerda anotar la version:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ruby -v
+</code></pre></div></div>
+<p>Una vez revisada la version instalada, que sera la mas reciente. configurar shell a uso automático chruby.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "source $(brew --prefix)/opt/chruby/share/chruby/chruby.sh" &gt;&gt; ~/.zshrc
+echo "source $(brew --prefix)/opt/chruby/share/chruby/auto.sh" &gt;&gt; ~/.zshrc
+echo "chruby VERSION_RUBY" &gt;&gt; ~/.zshrc # run 'chruby' to see actual version
+</code></pre></div></div>
+<p>En VERSION_RUBY ponemos la version que tenemos anotada anteriormente, ejemplo: <strong>ruby-3.3.5</strong></p>
+
+<p>Si usas Bash, reemplaza .zshrc con .bash_profile.</p>
+
+<h2 id="3-paso-3-instalar-jekyll">3. Paso 3: Instalar Jekyll</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem install jekyll
+</code></pre></div></div>
+
+<h2 id="extra-1-iniciar-un-proyecto">Extra 1: Iniciar un proyecto</h2>
+
+<p>Ahora que tenemos Jekyll instalado, generamos un proyecto.
+Hay dos opciones:</p>
+
+<ul>
+  <li>Desde un tema basico como <strong>“Minimal”</strong>.</li>
+  <li>Un tema propio.</li>
+</ul>
+
+<h3 id="tema-basico">Tema basico</h3>
+
+<p>Generamos una carpta de poryectos, iniciamos la terminal y abrimos la carpeta con la terminal, ejemplo:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd /my_proyecto/
+</code></pre></div></div>
+
+<p>Donde mi proyecto es la ruta de la carpeta, simplemente escribe <strong>cd</strong> arrastra la carpeta con el mouse y sueltala en la terminal,
+asi se escribir la ruta.</p>
+
+<p>Ahora generamos un proyecto:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jekyll new my-awesome-site
+</code></pre></div></div>
+
+<p>Donde <strong>my-awesome-site</strong> es el nombre que tendra este.</p>
+
+<h3 id="tema-propio">Tema propio</h3>
+
+<p>Lo anterior pero al momento de generar el proyecto usamos esto:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jekyll new-theme my-awesome-site
+</code></pre></div></div>
+<p>Donde <strong>my-awesome-site</strong> es el nombre que tendra este.</p>
+
+<h3 id="iniciar-servidor">Iniciar servidor</h3>
+
+<p>Una vez generado el proyecto, inicializamos el servidor:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle exec jekyll serve
+</code></pre></div></div>
+<p>Estara disponible en la sigiente direccion local, desde el navegador:
+<a href="http://localhost:4000">http://localhost:4000</a></p>
+
+<p>Ó la que señale, en la terminal se puede ver:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Server address: http://127.0.0.1:4000/
+</code></pre></div></div>
+<p>Para detener el servidor simplemente es:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Server running... press ctrl-c to stop.
+</code></pre></div></div>
+<p>Es decir oprime <strong>Ctrl+C</strong></p>
+
+<h3 id="referencias">Referencias</h3>
+
+<ul>
+  <li><a href="https://jekyllrb.com/docs/continuous-integration/github-actions/">https://jekyllrb.com/docs/continuous-integration/github-actions/</a></li>
+</ul>
+
+        </div><a class="u-url" href="/basura/2024-10-03-jekyll-actions-jekyll" hidden></a>
       </div>
       </article>
   <section class="creditos" observadoranimaciones="animate" id="creditos">
