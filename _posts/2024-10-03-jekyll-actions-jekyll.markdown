@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Configurar Jekyll usando acciones de Github: Jekyll"
+title:  "Configurar un sitio Jekyll usando acciones de Github: Jekyll"
 date:   2024-10-05 16:10:00 -0600
 #permalink: /Primer post
 categories: [ Blog ]
@@ -17,120 +17,63 @@ author-dev: Leonardo Cahuich
 color: '#ffcc00'
 #backgroundColor: '#333333'
 ---
-Jekyll es un constructor de sitios web estaticos basado en ruby, relacionado indirectamente a github,
-es una herramienta para mantener sitios web, blog, etc. De una forma menos costosa, usando github y
-un dominio web relacionado a este.
+Al construir un sitio web con **Jekyll** y subirlo a **Github** este funciona bajo un entorno restringido,
+el cual no permite:
 
+- Versiones alternas de Jekyll
+- Plugins fuera de [lista blanca](https://pages.github.com/versions/)
 
-Instalar Jekyll en MacOS es hasta cierto punto facil, para eso se requiere:
-- Un gestor de paquetes, en este caso: **Homebrew**.
-- Un gestor de versiones de Ruby, en este caso **ruby-install**.
-- Un selector de versiones, en este caso **chruby**
+Pero una forma de solucionar esto es implementando el sitio web con un **Workflow (flujo de trabajo)** disferente.
+Github-Pages usa su flujo de trabajo, pero ahora esta disponible uno mas exacto solo llamado **Jekyll**,
+el cual si permite lo que anteriormente no era permitido.
 
-Recomendaciones importantes:
-- **Nunca instales homebrew con sudo**
-  Por ejemplo, tener un usuario normal, y otro solo de administrador eso traera problemas.
-  Usa un usuario normal con administrador habilitado.
+## Uso de flujo de trabajo "Jekyll"
 
-## 1. Paso 1: Instalar Homebrew
+Para implementar tienes que modificar tu sitio siguiendo los siguientes pasos:
 
-Inicia una terminal e introduce:
-```
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
-Recuerda: **nada de sudo al inicio**
+### 1. Modificar "Gemfile"
 
-## 2. Paso 2: Instalar chruby y ruby con ruby-install
-Revisamos la version de ruby instalada, en este caso veremos una pero es la que macos usa por defecto, no la nescesitamos:
-```
-ruby -v
-```
-Instalamos chruby y ruby-install:
-```
-brew install chruby ruby-install
-```
-Instalar ruby:
-```
-ruby-install ruby
-```
-Actualizamos para estar seguros:
-```
-ruby-install ruby --update
-```
-Revisamos la version de ruby instalada, recuerda anotar la version:
-```
-ruby -v
-```
-Una vez revisada la version instalada, que sera la mas reciente. configurar shell a uso automático chruby.
-```
-echo "source $(brew --prefix)/opt/chruby/share/chruby/chruby.sh" >> ~/.zshrc
-echo "source $(brew --prefix)/opt/chruby/share/chruby/auto.sh" >> ~/.zshrc
-echo "chruby VERSION_RUBY" >> ~/.zshrc # run 'chruby' to see actual version
-```
-En VERSION_RUBY ponemos la version que tenemos anotada anteriormente, ejemplo: **ruby-3.3.5**
+Para ello ve a tu archivo **Gemfile** he inserta como gem la version de jekyll que quieres usar:
 
-Si usas Bash, reemplaza .zshrc con .bash_profile.
-
-## 3. Paso 3: Instalar Jekyll
+Ejemplo:
 
 ```
-gem install jekyll
+gem 'jekyll', '~> 4.3.4'
 ```
 
-## Extra 1: Iniciar un proyecto
+### 2. Agregar plataformas linux a "Gemfile.lock"
 
-Ahora que tenemos Jekyll instalado, generamos un proyecto.
-Hay dos opciones:
-
-- Desde un tema basico como **"Minimal"**.
-- Un tema propio.
-
-### Tema basico
-
-Generamos una carpta de poryectos, iniciamos la terminal y abrimos la carpeta con la terminal, ejemplo:
+Ve a la terminal ya abierta en la carpeta de tu sitio web e ingresa:
 
 ```
-cd /my_proyecto/
+ bundle lock --add-platform x86_64-linux
 ```
 
-Donde mi proyecto es la ruta de la carpeta, simplemente escribe **cd** arrastra la carpeta con el mouse y sueltala en la terminal,
-asi se escribir la ruta.
+Esto se debe a que el flujo de trbajao en Github usa Ubuntu.
 
-Ahora generamos un proyecto:
+### 3. Conficto de versiones del tema y el flujo de trabajo.
+
+Para ello debes ir al repositorio del tema que usas y buscar la version de ruby que requiere ese tema.
+
+Esto lo encontraras en el ".gemspec" del tema, en una linea parecida a esta
+
 ```
-jekyll new my-awesome-site
+ spec.required_ruby_version = "> 3.2"
 ```
 
-Donde **my-awesome-site** es el nombre que tendra este.
+Ahora ve al flujo de trabajo de tu sitio, encontrado en un carpte oculta llamada ".Github" en la sudcarptea "Workflow"
+ahi encontraras el archivo "jekyll.yml", busca ahi una linea parecida a esta:
 
-### Tema propio
+```
+ ruby-version: '3.1' # Not needed with a .ruby-version file
+```
 
-Lo anterior pero al momento de generar el proyecto usamos esto:
-```
-jekyll new-theme my-awesome-site
-```
-Donde **my-awesome-site** es el nombre que tendra este.
+Ahora iguala la version del tema con la version en el archivo "jekyll.yml" en la linea anteriormente mencionada:
 
-### Iniciar servidor
-
-Una vez generado el proyecto, inicializamos el servidor:
 ```
-bundle exec jekyll serve
+ ruby-version: '3.2' # Not needed with a .ruby-version file
 ```
-Estara disponible en la sigiente direccion local, desde el navegador:
-[http://localhost:4000](http://localhost:4000)
-
-Ó la que señale, en la terminal se puede ver:
-```
-Server address: http://127.0.0.1:4000/
-```
-Para detener el servidor simplemente es:
-```
-Server running... press ctrl-c to stop.
-```
-Es decir oprime **Ctrl+C**
 
 ### Referencias
 
-- [https://jekyllrb.com/docs/installation/](https://jekyllrb.com/docs/installation/)
 - [https://jekyllrb.com/docs/continuous-integration/github-actions/](https://jekyllrb.com/docs/continuous-integration/github-actions/)

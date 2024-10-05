@@ -1,6 +1,6 @@
 <!doctype html>
 <html class="no-js" lang="es_mx"><head>
-    <title>Configurar un sitio Jekyll usando acciones de Github: Jekyll</title>
+    <title>Generar un sitio web con Jekyll</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,22 +14,22 @@
       <link rel="stylesheet" href="/assets/css/animaciones.css" />
 
     <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Configurar un sitio Jekyll usando acciones de Github: Jekyll | Leonardo Cahuich</title>
+<title>Generar un sitio web con Jekyll | Leonardo Cahuich</title>
 <meta name="generator" content="Jekyll v4.3.4" />
-<meta property="og:title" content="Configurar un sitio Jekyll usando acciones de Github: Jekyll" />
+<meta property="og:title" content="Generar un sitio web con Jekyll" />
 <meta name="author" content="Leonardo Cahuich" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Al construir un sitio web con Jekyll y subirlo a Github este funciona bajo un entorno restringido, el cual no permite:" />
-<meta property="og:description" content="Al construir un sitio web con Jekyll y subirlo a Github este funciona bajo un entorno restringido, el cual no permite:" />
-<link rel="canonical" href="https://preview.cahuich.com//Articulo/blog/jekyll-actions-jekyll" />
-<meta property="og:url" content="https://preview.cahuich.com//Articulo/blog/jekyll-actions-jekyll" />
+<meta name="description" content="Jekyll es un constructor de sitios web estaticos basado en ruby, relacionado indirectamente a github, es una herramienta para mantener sitios web, blog, etc. De una forma menos costosa, usando github y un dominio web relacionado a este." />
+<meta property="og:description" content="Jekyll es un constructor de sitios web estaticos basado en ruby, relacionado indirectamente a github, es una herramienta para mantener sitios web, blog, etc. De una forma menos costosa, usando github y un dominio web relacionado a este." />
+<link rel="canonical" href="https://preview.cahuich.com//Articulo/blog/Generar-un-sitio-web-en-Jekyll" />
+<meta property="og:url" content="https://preview.cahuich.com//Articulo/blog/Generar-un-sitio-web-en-Jekyll" />
 <meta property="og:site_name" content="Leonardo Cahuich" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-10-05T16:10:00-06:00" />
+<meta property="article:published_time" content="2024-10-05T17:30:48-06:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Configurar un sitio Jekyll usando acciones de Github: Jekyll" />
+<meta property="twitter:title" content="Generar un sitio web con Jekyll" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Leonardo Cahuich"},"dateModified":"2024-10-05T16:10:00-06:00","datePublished":"2024-10-05T16:10:00-06:00","description":"Al construir un sitio web con Jekyll y subirlo a Github este funciona bajo un entorno restringido, el cual no permite:","headline":"Configurar un sitio Jekyll usando acciones de Github: Jekyll","mainEntityOfPage":{"@type":"WebPage","@id":"https://preview.cahuich.com//Articulo/blog/jekyll-actions-jekyll"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://preview.cahuich.com//icon.png"},"name":"Leonardo Cahuich"},"url":"https://preview.cahuich.com//Articulo/blog/jekyll-actions-jekyll"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Leonardo Cahuich"},"dateModified":"2024-10-05T17:30:48-06:00","datePublished":"2024-10-05T17:30:48-06:00","description":"Jekyll es un constructor de sitios web estaticos basado en ruby, relacionado indirectamente a github, es una herramienta para mantener sitios web, blog, etc. De una forma menos costosa, usando github y un dominio web relacionado a este.","headline":"Generar un sitio web con Jekyll","mainEntityOfPage":{"@type":"WebPage","@id":"https://preview.cahuich.com//Articulo/blog/Generar-un-sitio-web-en-Jekyll"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://preview.cahuich.com//icon.png"},"name":"Leonardo Cahuich"},"url":"https://preview.cahuich.com//Articulo/blog/Generar-un-sitio-web-en-Jekyll"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -344,8 +344,8 @@ function lunr_search(term) {
       <article class="sec sec-basica-15 post-c r-caja">
         <div class="post-c-cont">
         <div class="post-header">
-          <h1 class="post-title p-name" itemprop="name headline">Configurar un sitio Jekyll usando acciones de Github: Jekyll</h1>
-          <p class="post-meta"><time class="dt-published" datetime="2024-10-05T16:10:00-06:00" itemprop="datePublished">
+          <h1 class="post-title p-name" itemprop="name headline">Generar un sitio web con Jekyll</h1>
+          <p class="post-meta"><time class="dt-published" datetime="2024-10-05T17:30:48-06:00" itemprop="datePublished">
               Oct 5, 2024
             </time>• 
                 <span itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -353,67 +353,117 @@ function lunr_search(term) {
                 </div>
       
         <div class="post-content e-content" itemprop="articleBody">
-          <p>Al construir un sitio web con <strong>Jekyll</strong> y subirlo a <strong>Github</strong> este funciona bajo un entorno restringido,
-el cual no permite:</p>
+          <p>Jekyll es un constructor de sitios web estaticos basado en ruby, relacionado indirectamente a github,
+es una herramienta para mantener sitios web, blog, etc. De una forma menos costosa, usando github y
+un dominio web relacionado a este.</p>
 
+<p>Instalar Jekyll en MacOS es hasta cierto punto facil, para eso se requiere:</p>
 <ul>
-  <li>Versiones alternas de Jekyll</li>
-  <li>Plugins fuera de <a href="https://pages.github.com/versions/">lista blanca</a></li>
+  <li>Un gestor de paquetes, en este caso: <strong>Homebrew</strong>.</li>
+  <li>Un gestor de versiones de Ruby, en este caso <strong>ruby-install</strong>.</li>
+  <li>Un selector de versiones, en este caso <strong>chruby</strong></li>
 </ul>
 
-<p>Pero una forma de solucionar esto es implementando el sitio web con un <strong>Workflow (flujo de trabajo)</strong> disferente.
-Github-Pages usa su flujo de trabajo, pero ahora esta disponible uno mas exacto solo llamado <strong>Jekyll</strong>,
-el cual si permite lo que anteriormente no era permitido.</p>
+<p>Recomendaciones importantes:</p>
+<ul>
+  <li><strong>Nunca instales homebrew con sudo</strong>
+Por ejemplo, tener un usuario normal, y otro solo de administrador eso traera problemas.
+Usa un usuario normal con administrador habilitado.</li>
+</ul>
 
-<h2 id="uso-de-flujo-de-trabajo-jekyll">Uso de flujo de trabajo “Jekyll”</h2>
+<h2 id="1-paso-1-instalar-homebrew">1. Paso 1: Instalar Homebrew</h2>
 
-<p>Para implementar tienes que modificar tu sitio siguiendo los siguientes pasos:</p>
+<p>Inicia una terminal e introduce:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+</code></pre></div></div>
+<p>Recuerda: <strong>nada de sudo al inicio</strong></p>
 
-<h3 id="1-modificar-gemfile">1. Modificar “Gemfile”</h3>
+<h2 id="2-paso-2-instalar-chruby-y-ruby-con-ruby-install">2. Paso 2: Instalar chruby y ruby con ruby-install</h2>
+<p>Revisamos la version de ruby instalada, en este caso veremos una pero es la que macos usa por defecto, no la nescesitamos:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ruby -v
+</code></pre></div></div>
+<p>Instalamos chruby y ruby-install:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew install chruby ruby-install
+</code></pre></div></div>
+<p>Instalar ruby:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ruby-install ruby
+</code></pre></div></div>
+<p>Actualizamos para estar seguros:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ruby-install ruby --update
+</code></pre></div></div>
+<p>Revisamos la version de ruby instalada, recuerda anotar la version:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ruby -v
+</code></pre></div></div>
+<p>Una vez revisada la version instalada, que sera la mas reciente. configurar shell a uso automático chruby.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "source $(brew --prefix)/opt/chruby/share/chruby/chruby.sh" &gt;&gt; ~/.zshrc
+echo "source $(brew --prefix)/opt/chruby/share/chruby/auto.sh" &gt;&gt; ~/.zshrc
+echo "chruby VERSION_RUBY" &gt;&gt; ~/.zshrc # run 'chruby' to see actual version
+</code></pre></div></div>
+<p>En VERSION_RUBY ponemos la version que tenemos anotada anteriormente, ejemplo: <strong>ruby-3.3.5</strong></p>
 
-<p>Para ello ve a tu archivo <strong>Gemfile</strong> he inserta como gem la version de jekyll que quieres usar:</p>
+<p>Si usas Bash, reemplaza .zshrc con .bash_profile.</p>
 
-<p>Ejemplo:</p>
+<h2 id="3-paso-3-instalar-jekyll">3. Paso 3: Instalar Jekyll</h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem 'jekyll', '~&gt; 4.3.4'
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem install jekyll
 </code></pre></div></div>
 
-<h3 id="2-agregar-plataformas-linux-a-gemfilelock">2. Agregar plataformas linux a “Gemfile.lock”</h3>
+<h2 id="extra-1-iniciar-un-proyecto">Extra 1: Iniciar un proyecto</h2>
 
-<p>Ve a la terminal ya abierta en la carpeta de tu sitio web e ingresa:</p>
+<p>Ahora que tenemos Jekyll instalado, generamos un proyecto.
+Hay dos opciones:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> bundle lock --add-platform x86_64-linux
+<ul>
+  <li>Desde un tema basico como <strong>“Minimal”</strong>.</li>
+  <li>Un tema propio.</li>
+</ul>
+
+<h3 id="tema-basico">Tema basico</h3>
+
+<p>Generamos una carpta de poryectos, iniciamos la terminal y abrimos la carpeta con la terminal, ejemplo:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd /my_proyecto/
 </code></pre></div></div>
 
-<p>Esto se debe a que el flujo de trbajao en Github usa Ubuntu.</p>
+<p>Donde mi proyecto es la ruta de la carpeta, simplemente escribe <strong>cd</strong> arrastra la carpeta con el mouse y sueltala en la terminal,
+asi se escribir la ruta.</p>
 
-<h3 id="3-conficto-de-versiones-del-tema-y-el-flujo-de-trabajo">3. Conficto de versiones del tema y el flujo de trabajo.</h3>
-
-<p>Para ello debes ir al repositorio del tema que usas y buscar la version de ruby que requiere ese tema.</p>
-
-<p>Esto lo encontraras en el “.gemspec” del tema, en una linea parecida a esta</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> spec.required_ruby_version = "&gt; 3.2"
+<p>Ahora generamos un proyecto:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jekyll new my-awesome-site
 </code></pre></div></div>
 
-<p>Ahora ve al flujo de trabajo de tu sitio, encontrado en un carpte oculta llamada “.Github” en la sudcarptea “Workflow”
-ahi encontraras el archivo “jekyll.yml”, busca ahi una linea parecida a esta:</p>
+<p>Donde <strong>my-awesome-site</strong> es el nombre que tendra este.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ruby-version: '3.1' # Not needed with a .ruby-version file
+<h3 id="tema-propio">Tema propio</h3>
+
+<p>Lo anterior pero al momento de generar el proyecto usamos esto:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jekyll new-theme my-awesome-site
 </code></pre></div></div>
+<p>Donde <strong>my-awesome-site</strong> es el nombre que tendra este.</p>
 
-<p>Ahora iguala la version del tema con la version en el archivo “jekyll.yml” en la linea anteriormente mencionada:</p>
+<h3 id="iniciar-servidor">Iniciar servidor</h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> ruby-version: '3.2' # Not needed with a .ruby-version file
+<p>Una vez generado el proyecto, inicializamos el servidor:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle exec jekyll serve
 </code></pre></div></div>
+<p>Estara disponible en la sigiente direccion local, desde el navegador:
+<a href="http://localhost:4000">http://localhost:4000</a></p>
+
+<p>Ó la que señale, en la terminal se puede ver:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Server address: http://127.0.0.1:4000/
+</code></pre></div></div>
+<p>Para detener el servidor simplemente es:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Server running... press ctrl-c to stop.
+</code></pre></div></div>
+<p>Es decir oprime <strong>Ctrl+C</strong></p>
 
 <h3 id="referencias">Referencias</h3>
 
 <ul>
-  <li><a href="https://jekyllrb.com/docs/continuous-integration/github-actions/">https://jekyllrb.com/docs/continuous-integration/github-actions/</a></li>
+  <li><a href="https://jekyllrb.com/docs/installation/">https://jekyllrb.com/docs/installation/</a></li>
 </ul>
 
-        </div><a class="u-url" href="/Articulo/blog/jekyll-actions-jekyll" hidden></a>
+        </div><a class="u-url" href="/Articulo/blog/Generar-un-sitio-web-en-Jekyll" hidden></a>
       </div>
       </article>
   <section class="creditos" observadoranimaciones="animate" id="creditos">
