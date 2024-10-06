@@ -107,8 +107,8 @@ plugins:
 #paginate_path: "/colecciones/col-:num/"
 
 # Pagination Settings
-#pagination:
-#  enabled: true
+pagination:
+  enabled: true
 
 #permalink: /Articulo/:categories/:title
 

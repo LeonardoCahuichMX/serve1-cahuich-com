@@ -1,41 +1,8 @@
 'use strict';
 
-const e = React.createElement;
-
-function barraTitulo() {
-    return (
-        <section className="sec sec-basica sec-basica-10 home-blog-articulo-reciente">
-            <div className="responsivo centro">
-                <div className="r-caja caja" data-aos="fade-up">
-                    <div className="sec-basica-5">
-                        <h3>Hola</h3>
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
-}
-function barraTituloSimgle() {
-    return (
-        <section className="sec sec-basica sec-basica-10 home-blog-articulo-reciente">
-            <div className="responsivo centro">
-                <div className="r-caja caja" data-aos="fade-up">
-                    <div className="sec-basica-5">
-                        <h3>Hola</h3>
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
-}
-
-class LikeButton extends React.Component {
-    render() {
-        return (
-            barraTitulo()
-        );
-    }
-}
+/**
+ * Funciones principales
+ */
 
 function runElement(rce, componente, odjectDoom) {
     const domContainer = document.querySelector(odjectDoom);
@@ -43,7 +10,46 @@ function runElement(rce, componente, odjectDoom) {
     root.render(rce(componente));
 }
 
-runElement(e, LikeButton, '#like_button_container');
+/**
+ * Componentes
+ */
+
+const e = React.createElement;
+
+/**
+ * Cuerpo
+ */
+
+const user = {
+    name: 'Hedy Lamarr',
+    imageUrl: 'https://i.imgur.com/yXOvdOSs.jpg',
+    imageSize: 90,
+};
+function barraTitulo11() {
+    return (
+        <section className="sec sec-basica sec-basica-10 home-blog-articulo-reciente">
+            <div className="responsivo centro">
+                <div className="r-caja caja" data-aos="fade-up">
+                    <div className="sec-basica-5">
+                        <h1>{user.name}</h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+    )
+}
+class barraTituloRun extends React.Component {
+    render() {
+        return (
+            barraTitulo11()
+        );
+    }
+}
+
+/**
+ * Runs
+ */
+runElement(e, barraTituloRun, '#like_button_container');
 
 /*const domContainer = document.querySelector('#like_button_container');
 const root = ReactDOM.createRoot(domContainer);
