@@ -43,7 +43,7 @@ layout: default
     <div class="caja" data-aos="fade-up">
       <div class="terminal_code_contenedor consola" >
         <div class="texto">
-          <span class="tipo-1" observadoranimaciones="span_animacion" id="terminal_code_animacion_1">cahuich@leonardo:~$ bienvenida</span>
+          <span class="tipo-1" observadoranimaciones="span_animacion" id="terminal_code_animacion_1">cahuich@leonardo:~$ <b>home</b></span>
         </div>
       </div>
       <h1 class="titulo">
@@ -259,22 +259,22 @@ layout: default
       Sitios web
     </h2>
     <div class="lista-portafolio-grib">
-      {% assign posts_con_tag_2 = site.posts | where_exp: "post", "post.tags contains 'SitiosWeb'" %}
+      {% assign posts_con_tag_2 = site.portafolio | where_exp: "portafolio", "portafolio.tags contains 'SitiosWeb'" %}
 
       {% if posts_con_tag_2.size > 0 %}
-      {% for post in posts_con_tag_2 limit : 2 %}
+      {% for portafolio in posts_con_tag_2 limit : 2 %}
 
-      <div class="pc-cajas" onclick="window.location.href = '{{ site.baseurl }}{{ post.url | relative_url }}';">
-            <div class="caja-img" style="background-image: url({{ post.background }});"></div>
+      <div class="pc-cajas" onclick="window.location.href = '{{ site.baseurl }}{{ portafolio.url | relative_url }}';">
+            <div class="caja-img" style="background-image: url({{ portafolio.background }});"></div>
             <!--<img width="100%" height="auto" src={{ post.background }}>-->
             <!--<h4 class="sub-titulo">
               Articulo
             </h4>-->
             <h4 class="titulo">
-              <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+              <a href="{{ post.url | relative_url }}">{{ portafolio.title | escape }}</a>
             </h4>
             <p>
-              {{ post.excerpt | truncate: 100}}
+              {{ portafolio.excerpt | truncate: 100}}
             </p>
       </div>
 
@@ -305,22 +305,22 @@ layout: default
       Publicaciones
     </h2>
     <div class="lista-portafolio-grib">
-      {% assign posts_con_tag_2 = site.posts | where_exp: "post", "post.tags contains 'Publicaciones'" %}
+      {% assign posts_con_tag_2 = site.portafolio | where_exp: "portafolio", "portafolio.tags contains 'Publicaciones'" %}
 
       {% if posts_con_tag_2.size > 0 %}
-      {% for post in posts_con_tag_2 limit : 2 %}
+      {% for portafolio in posts_con_tag_2 limit : 2 %}
 
-      <div class="pc-cajas" onclick="window.location.href = '{{ site.baseurl }}{{ post.url | relative_url }}';">
-        <div class="caja-img" style="background-image: url({{ post.background }});"></div>
+      <div class="pc-cajas" onclick="window.location.href = '{{ site.baseurl }}{{ portafolio.url | relative_url }}';">
+        <div class="caja-img" style="background-image: url({{ portafolio.background }});"></div>
         <!--<img width="100%" height="auto" src={{ post.background }}>-->
         <!--<h4 class="sub-titulo">
           Articulo
         </h4>-->
         <h4 class="titulo">
-          <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+          <a href="{{ post.url | relative_url }}">{{ portafolio.title | escape }}</a>
         </h4>
         <p>
-          {{ post.excerpt | truncate: 100}}
+          {{ portafolio.excerpt | truncate: 100}}
         </p>
       </div>
 

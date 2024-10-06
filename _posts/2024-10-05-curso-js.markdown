@@ -1,0 +1,39 @@
+---
+layout: post
+title:  "Curso JavaScript"
+date:   2024-10-05 16:10:00 -0600
+#permalink: /Primer post
+categories: [ Blog ]
+color: '#b0b013'
+author: Leonardo Cahuich
+tag: [jekyll, lunr-js, html5, html, js, programacion]
+
+date-in: 2024-09-26
+date-out: 2024-09-26
+
+author-dev: Leonardo Cahuich
+
+#datos
+color: '#ffcc00'
+#backgroundColor: '#333333'
+---
+Al construir un sitio web con **Jekyll** y subirlo a **Github** este funciona bajo un entorno restringido,
+el cual no permite:
+
+- Versiones alternas de Jekyll
+- Plugins fuera de [lista blanca](https://pages.github.com/versions/)
+
+Este es un curso JavaScript
+
+## Variables
+
+Para implementar tienes que modificar tu sitio siguiendo los siguientes pasos:
+
+
+```
+ Codigo
+```
+
+### Referencias
+
+- [https://jekyllrb.com/docs/continuous-integration/github-actions/](https://jekyllrb.com/docs/continuous-integration/github-actions/)

@@ -6,7 +6,7 @@ date:   2024-10-05 17:28:00 -0600
 categories: [ Blog ]
 color: '#b0b013'
 author: Leonardo Cahuich
-tag: [jekyll, lunr-js, html5, html, js, programacion]
+tag: [jekyll, lunr-js, html5, html, js, programacion, pollo]
 
 date-in: 2024-09-26
 date-out: 2024-09-26

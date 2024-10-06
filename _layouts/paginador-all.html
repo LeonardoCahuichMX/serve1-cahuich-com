@@ -1,0 +1,91 @@
+---
+layout: pages
+---
+
+<script>
+  /*<alert("hola");
+  $('body').addClass('home');*/
+  var elemento = document.querySelectorAll("body");
+  for (var i = 0; i < elemento.length; i++) {
+    elemento[i].classList.add("inicio-pages");
+    //elemento[i].classList.add("blog-page");
+    elemento[i].classList.add("white-page");
+    elemento[i].classList.add("ws-page");
+  }
+</script>
+
+<style>
+</style>
+<div class="marginador"></div>
+
+<article class="sec sec-basica-5" linknav1="Articulos" id="articulos">
+  {%- if page.title -%}
+    <h1 class="page-heading">{{ page.title }}</h1>
+  {%- endif -%}
+</article>
+
+<section class="blog-paginador" id="lista-post">
+  <div class="sec sec-basica blog-paginador-cont">
+    <div class="blog-paginador-cont-grib">
+      <!--{%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}-->
+      {% for post in paginator.posts %}
+
+      <div class="blog-paginador-cont-grib-caja" onclick="window.location.href = '{{ site.baseurl }}{{ post.url | relative_url }}';">
+        <div class="centro-no">
+          <div class="caja-auto">
+            <h3 class="titulo" style="color: {{ post.color }};">
+              <a href="{{ post.url | relative_url }}">
+                {{ post.title | escape }}
+              </a>
+            </h3>
+            <p class="excerpt">
+              {{ post.excerpt | truncate: 200 }}
+            </p>
+
+            {% assign tags-1 =  post.tags | join: ' '  | split: ' ' | uniq %}
+            <h5>
+              {% for tag in tags-1 %}
+              <a class="tag" href="{{ site.baseurl }}/tag/{{ tag }}">{{ tag }}</a>
+              {% endfor %}
+            </h5>
+
+
+            {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+            <h5>{{ post.date | date: date_format }}, Artículo</h5>
+
+
+            <!--<h5>{{ post.tags }}</h5>-->
+
+            <!--{%- if site.show_excerpts -%}
+          {{ post.excerpt }}
+              {%- endif -%}-->
+          </div>
+        </div>
+      </div>
+      {%- endfor -%}
+
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-basica post-c">
+<!-- Pagination links -->
+<div class="pagination">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path }}" class="previous">
+      Anterior
+    </a>
+  {% else %}
+    <span class="previous">Anterior</span>
+  {% endif %}
+  <span class="page_number ">
+    Pagina: {{ paginator.page }} of {{ paginator.total_pages }}
+  </span>
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path }}" class="next">Siguiente</a>
+  {% else %}
+    <span class="next ">Siguiente</span>
+  {% endif %}
+</div>
+</section>
+

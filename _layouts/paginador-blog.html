@@ -1,0 +1,142 @@
+---
+layout: pages
+---
+
+<script>
+  /*<alert("hola");
+  $('body').addClass('home');*/
+  var elemento = document.querySelectorAll("body");
+  for (var i = 0; i < elemento.length; i++) {
+    elemento[i].classList.add("inicio-pages");
+    elemento[i].classList.add("blog-page");
+    elemento[i].classList.add("white-page");
+  }
+</script>
+
+<style>
+</style>
+<div class="marginador"></div>
+<section class="sec sec-basica sec-basica-10 portada-blog" linknav1="Portada" id="portada">
+  <div class="responsivo centro">
+    <div class="r-caja caja-auto" data-aos="fade-up">
+      <div class="terminal_code_contenedor sub-titulo" >
+        <div class="texto">
+          <span class="tipo-1" observadoranimaciones="span_animacion" id="terminal_code_animacion_1">cahuich@leonardo:~$ <b>blog</b></span>
+        </div>
+      </div>
+      <h1 class="titulo">
+        Aqui hablo desde
+        jekyll, html5,
+        y temas varios.
+      </h1>
+      <p>
+        A list of helpful front-end related questions you can use to interview potential candidates,
+         test yourself or completely ignore. Read more about it here. Better in your language? See one of our translations.
+      </p>
+      <!--<p>Puedo ayudarte a diseñar y programar tu sitio web.</p>
+      <p>Contáctame a mi correo electrónico</p>
+      <p id="botones"><a href="mailto:info@cahuich.com"  class="btn-1 b-blanco"><span class="b-2">info@cahuich.com</span></a></p>-->
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-basica sec-basica-0 home-blog-articulo-reciente">
+  <div class="responsivo centro">
+    <div class="r-caja caja-auto" data-aos="fade-up">
+      <div class="sec-basica-5">
+        {%- for post in site.categories.Blog -%}
+        {% if post.title == "Implementar Lunr.js en Jekyll" %}
+        <div class="r-caja caja-auto">
+          <div class="terminal_code_contenedor" >
+            <div class="texto">
+              <span class="tipo-1" observadoranimaciones="span_animacion" id="terminal_code_animacion_2">cahuich@leonardo:~$ post.<b>blog</b>.article.featured</span>
+            </div>
+          </div>
+          <h4 class="sub-titulo">Destacado</h4>
+          <h3 class="titulo">
+            <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+          </h3>
+          <p>
+            {{ post.excerpt }}
+          </p>
+          {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+          <h5>{{ post.date | date: date_format }}</h5>
+        </div>
+        {% endif %}
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+<article class="sec sec-basica" linknav1="Articulos" id="articulos">
+  {%- if page.title -%}
+    <h1 class="page-heading">{{ page.title }}</h1>
+  {%- endif -%}
+</article>
+
+<section class="blog-paginador" id="lista-post">
+  <div class="sec sec-basica blog-paginador-cont">
+    <div class="blog-paginador-cont-grib">
+      <!--{%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}-->
+      {% for post in paginator.posts %}
+
+      <div class="blog-paginador-cont-grib-caja" onclick="window.location.href = '{{ site.baseurl }}{{ post.url | relative_url }}';">
+        <div class="centro-no">
+          <div class="caja-auto">
+            <h3 class="titulo" style="color: {{ post.color }};">
+              <a href="{{ post.url | relative_url }}">
+                {{ post.title | escape }}
+              </a>
+            </h3>
+            <p class="excerpt">
+              {{ post.excerpt | truncate: 200 }}
+            </p>
+
+            {% assign tags-1 =  post.tags | join: ' '  | split: ' ' | uniq %}
+            <h5>
+              {% for tag in tags-1 %}
+              <a class="tag" href="{{ site.baseurl }}/tag/{{ tag }}">{{ tag }}</a>
+              {% endfor %}
+            </h5>
+
+
+            {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+            <h5>{{ post.date | date: date_format }}, Artículo</h5>
+
+
+            <!--<h5>{{ post.tags }}</h5>-->
+
+            <!--{%- if site.show_excerpts -%}
+          {{ post.excerpt }}
+              {%- endif -%}-->
+          </div>
+        </div>
+      </div>
+      {%- endfor -%}
+
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-basica post-c">
+<!-- Pagination links -->
+<div class="pagination">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path }}" class="previous">
+      Anterior
+    </a>
+  {% else %}
+    <span class="previous">Anterior</span>
+  {% endif %}
+  <span class="page_number ">
+    Pagina: {{ paginator.page }} of {{ paginator.total_pages }}
+  </span>
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path }}" class="next">Siguiente</a>
+  {% else %}
+    <span class="next ">Siguiente</span>
+  {% endif %}
+</div>
+</section>
+
