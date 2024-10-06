@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Jekyll en Github"
+title:  "Aprender a usar Jekyll"
 date:   2024-10-05 17:28:00 -0600
 #permalink: /Primer post
 categories: [ Blog ]
@@ -32,3 +32,7 @@ un dominio web relacionado a este.
 ## Implementar tu sitio web con Jekyll
 
 - [Con Github Actions]({{ site.baseurl }}/Articulo/blog/jekyll-actions-jekyll)
+
+## Pluings y bibliotecas
+
+- [Pluings y bibliotecas]({{ site.baseurl }}/Articulo/blog/plugins-y-blibliotecas-en-Jekyll)

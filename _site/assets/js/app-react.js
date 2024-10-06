@@ -2,31 +2,52 @@
 
 const e = React.createElement;
 
-function Video() {
+function barraTitulo() {
     return (
-        <section className="sec sec-basica sec-basica-0 home-blog-articulo-reciente">
+        <section className="sec sec-basica sec-basica-10 home-blog-articulo-reciente">
             <div className="responsivo centro">
-                <div className="r-caja caja-auto" data-aos="fade-up">
+                <div className="r-caja caja" data-aos="fade-up">
                     <div className="sec-basica-5">
                         <h3>Hola</h3>
                     </div>
                 </div>
             </div>
         </section>
-);
+    );
+}
+function barraTituloSimgle() {
+    return (
+        <section className="sec sec-basica sec-basica-10 home-blog-articulo-reciente">
+            <div className="responsivo centro">
+                <div className="r-caja caja" data-aos="fade-up">
+                    <div className="sec-basica-5">
+                        <h3>Hola</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
 }
 
 class LikeButton extends React.Component {
     render() {
         return (
-            Video()
+            barraTitulo()
         );
     }
 }
 
-const domContainer = document.querySelector('#like_button_container');
+function runElement(rce, componente, odjectDoom) {
+    const domContainer = document.querySelector(odjectDoom);
+    const root = ReactDOM.createRoot(domContainer);
+    root.render(rce(componente));
+}
+
+runElement(e, LikeButton, '#like_button_container');
+
+/*const domContainer = document.querySelector('#like_button_container');
 const root = ReactDOM.createRoot(domContainer);
-root.render(e(LikeButton));
+root.render(e(LikeButton));*/
 
 
 /*'use strict';
